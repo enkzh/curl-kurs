@@ -19,6 +19,8 @@ jobs:
 
     - name: Running Curl Request Bank Jateng
       env:
+        CLOUDLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+        CLOUDFLARE_KV_ID: ${{ secrets.CF_KV_ID }}
         CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }} # Ambil token dari GitHub Secrets
       run: |
         chmod +x ./bank-jateng.sh # Pastikan file memiliki permission execute
