@@ -28,7 +28,7 @@ response=$(curl -s 'https://www.bankjateng.co.id/api/public/kurs/?page_size=99' 
 
   lastUpdate=$(date '+%d/%m/%y - %H.%M WIB')
   
-  curl -X PUT "https://api.cloudflare.com/client/v4/accounts/f60335e0aa3a7f534a9ed799d5192a34/storage/kv/namespaces/b2282cc52f25464882a822bd11ceb664/values/bjb" \
+  curl -X PUT "https://api.cloudflare.com/client/v4/accounts/f60335e0aa3a7f534a9ed799d5192a34/storage/kv/namespaces/b2282cc52f25464882a822bd11ceb664/values/jawa_tengah" \
   -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
   -H "Content-Type: application/json" \
   --data "{\"bank\":\"jawa_tengah\",\"ttBeli\":\"${ttBeli}\",\"ttJual\":\"${ttJual}\",\"lastUpdate\":\"${lastUpdate}\"}"
