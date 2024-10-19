@@ -33,4 +33,4 @@ curl -X PUT "https://api.cloudflare.com/client/v4/accounts/f60335e0aa3a7f534a9ed
   -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
   -H "Content-Type: application/json" \
   # --data-raw "{\"bank\":\"bjb\",\"ttBeli\":\"${ttBeli}\",\"ttJual\":\"${ttJual}\"}"
-  --data-raw "{\"bank\":\"bjb\",\"ttBeli\":\"${ttBeli}\",\"ttJual\":\"${ttJual}\",\"lastUpdate\":\"${lastUpdate}\"}"
+  --data "{\"bank\":\"bjb\",\"ttBeli\":\"${ttBeli}\",\"ttJual\":\"${ttJual}\",\"lastUpdate\":\"${lastUpdate}\"}"
