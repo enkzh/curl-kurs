@@ -1,4 +1,7 @@
-# Set timezone ke WIB (UTC+7)
+#!/bin/bash
+
+BANKCODE="bjb"
+
 export TZ='Asia/Jakarta'
 
 # Ambil data dari Bank BJB
@@ -31,7 +34,13 @@ ttJual=$(printf "%'.2f\n" $ttJual | sed 's/\./,/g' | sed ':a;s/\B[0-9]\{3\}\(\,\
 lastUpdate=$(date '+%d/%m/%y - %H.%M WIB')
 
 # Kirim data ke Cloudflare KV Storage dengan key "bjb"
-curl -X PUT "https://api.cloudflare.com/client/v4/accounts/f60335e0aa3a7f534a9ed799d5192a34/storage/kv/namespaces/b2282cc52f25464882a822bd11ceb664/values/bjb" \
+curl -X PUT "https://api.cloudflare.com/client/v4/accounts/${COUDFLARE_ACCOUNT_ID}/storage/kv/namespaces/${COUDFLARE_KV_ID}/values/${BANKCODE}" \
   -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
   -H "Content-Type: application/json" \
-  --data "{\"bank\":\"bjb\",\"ttBeli\":\"${ttBeli}\",\"ttJual\":\"${ttJual}\",\"lastUpdate\":\"${lastUpdate}\"}"
+  --data "{\"bank\":\"${BANKCODE}\",\"ttBeli\":\"${ttBeli}\",\"ttJual\":\"${ttJual}\",\"lastUpdate\":\"${lastUpdate}\"}"
+
+# Output hasil
+echo "bank: $BANKCODE"
+echo "ttBeli: $ttBeli"
+echo "ttJual: $ttJual"
+echo "lastUpdate: $lastUpdate"
