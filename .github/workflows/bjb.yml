@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - bjb.sh  # Hanya jalankan workflow ini
   schedule:
     - cron: '0 0,9 * * *'  # Menjalankan 2 kali sehari pada pukul 07:00 WIB dan 16:00 WIB (00:00 dan 09:00 UTC)
   workflow_dispatch:
