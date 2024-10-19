@@ -1,3 +1,6 @@
+#!/bin/bash
+
+BANKCODE="jawa_tengah"
 export TZ="Asia/Jakarta"
 response=$(curl -s 'https://www.bankjateng.co.id/api/public/kurs/?page_size=99' \
   -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7' \
@@ -28,7 +31,13 @@ response=$(curl -s 'https://www.bankjateng.co.id/api/public/kurs/?page_size=99' 
 
   lastUpdate=$(date '+%d/%m/%y - %H.%M WIB')
   
-  curl -X PUT "https://api.cloudflare.com/client/v4/accounts/f60335e0aa3a7f534a9ed799d5192a34/storage/kv/namespaces/b2282cc52f25464882a822bd11ceb664/values/jawa_tengah" \
-  -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+  curl -X PUT "https://api.cloudflare.com/client/v4/accounts/${COUDFLARE_ACCOUNT_ID}/storage/kv/namespaces/${COUDFLARE_KV_ID}/values/${BANKCODE}" \
+  -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
   -H "Content-Type: application/json" \
-  --data "{\"bank\":\"jawa_tengah\",\"ttBeli\":\"${ttBeli}\",\"ttJual\":\"${ttJual}\",\"lastUpdate\":\"${lastUpdate}\"}"
+  --data "{\"bank\":\"${BANKCODE}\",\"ttBeli\":\"${ttBeli}\",\"ttJual\":\"${ttJual}\",\"lastUpdate\":\"${lastUpdate}\"}"
+
+# Output hasil
+echo "bank: $BANKCODE"
+echo "ttBeli: $ttBeli"
+echo "ttJual: $ttJual"
+echo "lastUpdate: $lastUpdate"
