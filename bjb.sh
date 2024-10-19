@@ -1,5 +1,7 @@
 # Set timezone ke WIB (UTC+7)
 export TZ='Asia/Jakarta'
+
+# Ambil data dari Bank BJB
 response=$(curl -s 'https://bankbjb.co.id/currency/filter' \
   -X 'POST' \
   -H 'Accept: */*' \
@@ -32,5 +34,4 @@ lastUpdate=$(date '+%d/%m/%y - %H.%M WIB')
 curl -X PUT "https://api.cloudflare.com/client/v4/accounts/f60335e0aa3a7f534a9ed799d5192a34/storage/kv/namespaces/b2282cc52f25464882a822bd11ceb664/values/bjb" \
   -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
   -H "Content-Type: application/json" \
-  # --data-raw "{\"bank\":\"bjb\",\"ttBeli\":\"${ttBeli}\",\"ttJual\":\"${ttJual}\"}"
   --data "{\"bank\":\"bjb\",\"ttBeli\":\"${ttBeli}\",\"ttJual\":\"${ttJual}\",\"lastUpdate\":\"${lastUpdate}\"}"
