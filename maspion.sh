@@ -23,7 +23,7 @@ response=$(curl -s -L 'https://www.bankmaspion.co.id/exchange-rates' \
   -H 'user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36')
 
 #echo "$response" | head -n 20  # Menampilkan 20 baris pertama
-#echo "$response" | xmllint --html --format - 
+echo "$response" | xmllint --html --format - 
 # Gunakan xmllint untuk mengambil ttBeli dan ttJual dari tabel TT COUNTER
 ttBeli=$(echo "$response" | xmllint --html --xpath '//h3[contains(text(), "TT COUNTER")]/following-sibling::div//tr[td[text()="USD"]]/td[3]/text()' - 2>/dev/null)
 ttJual=$(echo "$response" | xmllint --html --xpath '//h3[contains(text(), "TT COUNTER")]/following-sibling::div//tr[td[text()="USD"]]/td[4]/text()' - 2>/dev/null)
