@@ -25,7 +25,7 @@ harga=$(echo "$response" | xmllint --html --xpath '//tbody/tr[1]/td[2]/text()' -
 lastUpdate=$(date '+%d/%m/%y - %H.%M WIB')
 
 #    -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
-  curl -X PUT "https://api.cloudflare.com/client/v4/accounts/${COUDFLARE_ACCOUNT_ID}/storage/kv/namespaces/${COUDFLARE_KV_JISDOR}/values/${tanggal}" \
+  curl -X PUT "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/storage/kv/namespaces/${CLOUDFLARE_KV_JISDOR}/values/${tanggal}" \
   -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
   -H "Content-Type: application/json" \
   --data "{\"harga\":\"${harga}\",\"lastUpdate\":\"${lastUpdate}\"}"
