@@ -20,19 +20,19 @@ response=$(curl -s 'https://www.bankjateng.co.id/api/public/kurs/?page_size=99' 
   -H 'upgrade-insecure-requests: 1' \
   -H 'user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36')
   
-  ttBeli=$(echo $response | jq -r '.data[] | select(.currency == "USD/IDR") | .bid')
-  ttJual=$(echo $response | jq -r '.data[] | select(.currency == "USD/IDR") | .offer')
+ttBeli=$(echo $response | jq -r '.data[] | select(.currency == "USD/IDR") | .bid')
+ttJual=$(echo $response | jq -r '.data[] | select(.currency == "USD/IDR") | .offer')
   
-  ttBeli=$(printf "%.2f\n" $ttBeli | sed 's/\./,/g' | sed ':a;s/\B[0-9]\{3\}\(\,\|$\)/.&/;ta')
-  ttJual=$(printf "%.2f\n" $ttJual | sed 's/\./,/g' | sed ':a;s/\B[0-9]\{3\}\(\,\|$\)/.&/;ta')
+ttBeli=$(printf "%.2f\n" $ttBeli | sed 's/\./,/g' | sed ':a;s/\B[0-9]\{3\}\(\,\|$\)/.&/;ta')
+ttJual=$(printf "%.2f\n" $ttJual | sed 's/\./,/g' | sed ':a;s/\B[0-9]\{3\}\(\,\|$\)/.&/;ta')
 
 # printf "%.2f\n" memastikan angka hanya memiliki dua desimal (misalnya 15385.00).
 # sed 's/\./,/g' mengganti titik dengan koma untuk pemisah desimal.
 # sed ':a;s/\B[0-9]\{3\}\(\,\|$\)/.&/;ta' menambahkan pemisah ribuan.
 
-  lastUpdate=$(date '+%d/%m/%y - %H.%M WIB')
+lastUpdate=$(date '+%d/%m/%y - %H.%M WIB')
   
-  curl -X PUT "https://api.cloudflare.com/client/v4/accounts/${COUDFLARE_ACCOUNT_ID}/storage/kv/namespaces/${COUDFLARE_KV_ID}/values/${BANKCODE}" \
+curl -X PUT "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/storage/kv/namespaces/${CLOUDFLARE_KV_ID}/values/${BANKCODE}" \
   -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
   -H "Content-Type: application/json" \
   --data "{\"bank\":\"${BANKCODE}\",\"ttBeli\":\"${ttBeli}\",\"ttJual\":\"${ttJual}\",\"lastUpdate\":\"${lastUpdate}\"}"
