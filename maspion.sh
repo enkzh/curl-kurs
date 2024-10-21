@@ -4,7 +4,6 @@ BANKCODE="maspion"
 
 export TZ="Asia/Jakarta"
 # Ambil HTML halaman dengan curl
-#response=$(curl -s 'https://bankmaspion.co.id/exchange-rates')
 response=$(curl -s 'https://www.bankmaspion.co.id/exchange-rates' \
   -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7' \
   -H 'accept-language: id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7' \
@@ -26,10 +25,10 @@ response=$(curl -s 'https://www.bankmaspion.co.id/exchange-rates' \
 # Gunakan xmllint untuk mengambil ttBeli dan ttJual dari tabel TT COUNTER
 ttBeli=$(echo "$response" | xmllint --html --xpath '//h3[contains(text(), "TT COUNTER")]/following-sibling::div//tr[td[text()="USD"]]/td[3]/text()' - 2>/dev/null)
 ttJual=$(echo "$response" | xmllint --html --xpath '//h3[contains(text(), "TT COUNTER")]/following-sibling::div//tr[td[text()="USD"]]/td[4]/text()' - 2>/dev/null)
-  lastUpdate=$(date '+%d/%m/%y - %H.%M WIB')
+lastUpdate=$(date '+%d/%m/%y - %H.%M WIB')
 
-#    -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
-  curl -X PUT "https://api.cloudflare.com/client/v4/accounts/${COUDFLARE_ACCOUNT_ID}/storage/kv/namespaces/${COUDFLARE_KV_ID}/values/${BANKCODE}" \
+# UPDATE KV
+  curl -X PUT "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/storage/kv/namespaces/${CLOUDFLARE_KV_ID}/values/${BANKCODE}" \
   -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
   -H "Content-Type: application/json" \
   --data "{\"bank\":\"${BANKCODE}\",\"ttBeli\":\"${ttBeli}\",\"ttJual\":\"${ttJual}\",\"lastUpdate\":\"${lastUpdate}\"}"
