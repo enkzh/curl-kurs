@@ -1,0 +1,27 @@
+name: Curl JISDOR
+on: 
+  push:
+    branches:
+      - main
+    paths:
+      - jisdor.sh  # Hanya jalankan workflow ini
+  schedule:
+    - cron: '0 0,9 * * *'  # Menjalankan 2 kali sehari pada pukul 07:00 WIB dan 16:00 WIB (00:00 dan 09:00 UTC)
+  workflow_dispatch:
+
+jobs:
+  curl_job:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Run Curl Request JISDOR
+      env:
+        CLOUDLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+        CLOUDFLARE_KV_JISDOR: ${{ secrets.CF_KV_JISDOR }}
+        CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }} # Ambil token dari GitHub Secrets
+      run: |
+        chmod +x ./jisdor.sh # Pastikan file memiliki permission execute
+        ./jisdor.sh
