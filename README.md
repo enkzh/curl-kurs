@@ -7,7 +7,7 @@
 |4|ok |[BRI](https://bri.co.id/kurs-detail)	|bri|002|[BRINIDJA](https://swift.cpalytics.workers.dev/ID/BRINIDJA)|
 |5|- |BSI (Bank Syariah Indonesia)	|bsm|451|[BSMDIDJA](https://swift.cpalytics.workers.dev/ID/BSMDIDJA)|
 |6|ok |BCA Syariah	|bca_syr|536||
-|7|ok |[BTN / BTN Syariah]()	|btn||[BTANIDJA](https://swift.cpalytics.workers.dev/ID/BTANIDJA)|
+|7|ok |[BTN / BTN Syariah](https://www.btn.co.id/id-ID/Simulation)	|btn||[BTANIDJA](https://swift.cpalytics.workers.dev/ID/BTANIDJA)|
 |8|ok |[CIMB Niaga / CIMB Niaga Syariah](https://www.cimbniaga.co.id/id/personal/treasury/kurs-valas)	|cimb||[BNIAIDJA](https://swift.cpalytics.workers.dev/ID/BNIAIDJA)|
 |9|ok |[DBS Bank Indonesia](https://www.dbs.id/id/treasures-id/forex.page)	|dbs|||
 |10|ok |[BTPN / Jenius / BPTN Wow!](https://www.btpn.com/id/prime-lending-rate/kurs)	|btpn||[TAPEIDJ1](https://swift.cpalytics.workers.dev/ID/TAPEIDJ1)|
@@ -17,7 +17,7 @@
 |14||Bank Jago	|artos|||
 |15|pending |[LINE Bank / KEB Hana](https://myhana.co.id/gibPT/intn/rate/exchange/index)	|hana||[HNBNIDJA](https://swift.cpalytics.workers.dev/ID/HNBNIDJA)|
 |16|- |blu by BCA Digital	|royal|||
-|17|pending |Nobu (Nationalnobu) Bank	|nationalnobu|||
+|17|pending |[Nobu (Nationalnobu) Bank](https://nobubank.com/id/kurs-nobu-bank/)	|nationalnobu||[NOBUIDJA](https://swift.cpalytics.workers.dev/ID/NOBUIDJA)|
 |18|pending |[Bank Permata](https://www.permatabank.com/en/kurs/nilai-tukar-mata-uang)	|permata||[BBBAIDJA](https://swift.cpalytics.workers.dev/ID/BBBAIDJA)|
 |19|pending |[Maybank Indonesia](https://www.maybank.co.id/Business/forexrate)	|bii|||
 |20|ok |[Panin Bank](https://www.panin.co.id/id/kurs)	|panin|||
@@ -29,14 +29,14 @@
 |26|null |ANZ Indonesia	|anz|||
 |27|ok |[HSBC Indonesia](https://www.hsbc.co.id/1/2/id/personal/foreign-exchange/real-time-fx-rates)	|hsbc|||
 |28|ok |[Bank Mayapada](https://www.bankmayapada.com/biaya-tarif/info-kurs)	|mayapada||[MAYAIDJA](https://swift.cpalytics.workers.dev/ID/MAYAIDJA)|
-|29|pending |BJB	|bjb|110|[PDJBIDJA](https://swift.cpalytics.workers.dev/ID/PDJBIDJA)|
+|29|pending |[BJB](https://www.bankbjb.co.id/page/daftar-kurs)	|bjb|110|[PDJBIDJA](https://swift.cpalytics.workers.dev/ID/PDJBIDJA)|
 |30|null |[Bank DKI Jakarta](https://website-api.bankdki.co.id/api/v1/kurs)	|dki|||
 |31|null |BPD DIY	|daerah_istimewa|112||
-|32|pending Cron |Bank Jateng	|jawa_tengah|113|[PDJGIDJA](https://swift.cpalytics.workers.dev/ID/PDJGIDJA)|
-|33|pending Cron |Bank Jatim	|jawa_timur|114|[BJTMIDJA](https://swift.cpalytics.workers.dev/ID/BJTMIDJA)|
+|32|pending Cron |[Bank Jateng](https://www.bankjateng.co.id/)	|jawa_tengah|113|[PDJGIDJA](https://swift.cpalytics.workers.dev/ID/PDJGIDJA)|
+|33|pending Cron |[Bank Jatim](https://www.bankjatim.co.id/id/suku-bunga/kurs)	|jawa_timur|114|[BJTMIDJA](https://swift.cpalytics.workers.dev/ID/BJTMIDJA)|
 |34||Bank Jambi	|jambi|||
 |35||Bank Sumut	|sumut||[PDSUIDSA](https://swift.cpalytics.workers.dev/ID/PDSUIDSA)|
-|36||Bank Sumbar (Bank Nagari)	|sumatera_barat||[PDSBIDSP](https://swift.cpalytics.workers.dev/ID/PDSBIDSP)|
+|36||[Bank Sumbar (Bank Nagari)](https://www.banknagari.co.id/kurs?page=eVOZpV9D5cB1HMIMc0xJow%3D%3D)	|sumatera_barat||[PDSBIDSP](https://swift.cpalytics.workers.dev/ID/PDSBIDSP)|
 |37||Bank Riau Kepri	|riau_dan_kepri||[PDRIIDJA](https://swift.cpalytics.workers.dev/ID/PDRIIDJA)|
 |38||Bank Sumsel Babel	|sumsel_dan_babel||[BSSPIDSP](https://swift.cpalytics.workers.dev/ID/BSSPIDSP)|
 |39||Bank Lampung	|lampung|||
