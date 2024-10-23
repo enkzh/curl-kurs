@@ -24,7 +24,7 @@
 |21|pending |[TMRW / UOB](https://www.uob.co.id/wealthbanking/kurs.page)	|uob||[BBIJIDJA](https://swift.cpalytics.workers.dev/ID/BBIJIDJA)|
 |22|ok |[OCBC NISP](https://www.ocbc.id/id/nilai-tukar-mata-uang-asing)	|ocbc||[NISPIDJA](https://swift.cpalytics.workers.dev/ID/NISPIDJA)|
 |23|null |Citibank	|citibank|||
-|24|ok |Bank Artha Graha Internasional	|artha|037||
+|24|ok |[Bank Artha Graha Internasional](https://www.arthagraha.com/)	|artha|037||
 |25|null |Standard Chartered Bank	|standard_chartered||[SCBLIDJ](https://swift.cpalytics.workers.dev/ID/SCBLIDJ)|
 |26|null |ANZ Indonesia	|anz|||
 |27|ok |[HSBC Indonesia](https://www.hsbc.co.id/1/2/id/personal/foreign-exchange/real-time-fx-rates)	|hsbc|||
@@ -70,5 +70,9 @@
 |67||[Bank ICBC Indonesia](https://papi.icbc.com.cn/exchanges/foreign?zone=indonesia)|icbc|||
 |68||[J Trust Bank](https://www.jtrustbank.co.id/id/kurs_jtrust)|jtrust|||
 |69||[Bank Woori Saudara](https://www.bankwoorisaudara.com/) |bws|||
+|70||[Bank IBK Indonesia](https://www.ibk.co.id/index)|ibk|||
+|71||[Bank Ina Perdana](https://bankina.co.id/id/valas/)|ina|||
+|72||[Bank Index](https://www.bankindex.co.id/)|index|||
+|73||[Bank of India Indonesia](https://boiindonesia.co.id/)|boii|||
 
 by. Sugeng Barokatul Anam
